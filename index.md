@@ -6,15 +6,12 @@ subtitle:
 sitemap:
   priority: 1.0
 ---
-Hello
+<br>
+<br>
+Hello.
 
-<p class="describe-text">I'm Elian</p>
-<br>
-Welcome to my webite.
-<br>
-<br>
-<br>
-<br>
-<br>
+#### I'm Elian
+#### I like to code
+#### Welcome to my webite.
 <br>
 <br>
