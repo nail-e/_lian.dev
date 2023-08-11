@@ -22,6 +22,7 @@ img             {width: 900px; max-width: 900px; margin-bottom: 20px;}
 .header			{height: 66px; width: 100%; margin: auto; margin-bottom: 50px; border-bottom: dotted 1px #444;}
 .logodiv 		{max-width: 900px; margin:auto; padding: 0 20px;}
 .logo			{width: 35px; margin: auto; margin-top: 14px;}
+.indexname		{width: 50%; display: block; margin-left: auto; margin-right: auto;}
 #list           {margin-bottom: 50px;}
 #post           {max-width: 900px; margin-bottom: 20px; margin-top: -10px; line-height: 28px;}
 .categories		{max-width: 300px; right:0; margin: 40px 60px 0 0; position: fixed; background: #222;
