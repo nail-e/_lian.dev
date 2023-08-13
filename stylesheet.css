@@ -15,7 +15,7 @@ li              {margin: 15px 0; padding: 0; list-style: none;}
 a               {text-decoration: none; color: #fff;}
 a:hover         {color: #fff; text-decoration: underline;}
 p               {padding: 0; margin: 10px 0 30px 0;}
-img             {width: 900px; max-width: 900px; margin-bottom: 20px;}
+img             {max-width: 900px; margin-bottom: 10px;}
 #page           {max-width: 900px; margin: auto; padding: 0 20px;}
 #content        {max-width:100%; margin: auto;}
 #footer 		{max-width: 900px; margin:auto; margin-top: 55px;}
@@ -39,7 +39,7 @@ img             {width: 900px; max-width: 900px; margin-bottom: 20px;}
 .important      {margin-left: -18px;}
 .title          {display: inline-block; margin-bottom: 20px; margin-top: 20px; color: #FFF;}
 .shoptitle      {display: inline-block; margin-bottom: 20px; margin-top: 20px; position: fixed;}
-.subtitle       {display: inline-block; margin: 20px 0; color: #FFF;}
+.subtitle       {padding: 0; margin: 0px 0; color: #FFF; margin-bottom: 20px;}
 .subtitle2      {display: inline-block; color: #222; background: #FFF;}
 .subtitle2:hover{color: #222; background: #FFF;}
 .code           {max-width: 900px; background: #1f1f1f; padding: 20px; margin:10px 0 30px 0; display:inline-block;}
@@ -52,6 +52,5 @@ video 			{max-width: 100%}
 
 @media 			only screen and (max-width: 900px)
 {
-img 			{width: 100%;}
-body			{font-size: 19px;}
+body			{font-size: 13px;}
 }
