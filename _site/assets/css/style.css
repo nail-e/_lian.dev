@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,500,600,700');
 :root {
     --bg-color: #fafafa;
     --bg-hover-color: #ececec;
@@ -16,7 +17,7 @@
 }
 
 body{
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   background: var(--body-bg);
   color: var(--primary-font-color);
@@ -69,7 +70,7 @@ body{
   background: var(--bg-hover-color);
 }
 
-.post-list .post-title{width: 80%; color: var(--primary-font-color); font-weight: 600;}
+.post-list .post-title{width: 80%; color: var(--primary-font-color); font-weight: 600; }
 .post-list .post-date{width: 20%; text-align: right;}
 
 .post-header{
@@ -85,7 +86,7 @@ body{
   border:1px dashed var(--border-color);
 }
 
-.post-header .post-share{font-weight: 600; color: var(--primary-font-color); display: flex; justify-content: flex-end; align-items: center;}
+.post-header .post-share{font-weight: 600; color: var(--primary-font-color); display: flex; justify-content: flex-end; align-items: center; }
 .post-header .post-date{font-weight: 600;}
 .post-header .post-share a{display: flex;}
 
@@ -135,7 +136,7 @@ body{
 
 .blog-post-content{
   width: 100%;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .post-tag{background: var(--bg-color); color:var(--primary-font-color); padding: 5px 10px;}
