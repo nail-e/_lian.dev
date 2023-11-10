@@ -1,0 +1,43 @@
+I"�<p>Pi has always been 3.14159 to me and to everyone else really, it’s only nerds who’d want to know pi up to its 100th or 1000th digit while its your supernerds who’d be searching for pi up to the millionth digit and well, I’m a supernerd (when I want to).</p>
+
+<p>So I was bored one summers day and way too done with the monotony of math and physics revision and opened up YouTube and the first video that piqued my interest was Stand-Up Math’s legendary video of finding Among Us in Pi. This Einsteinian ingenuity of a video warrants its own place in the annals of history for finding the meaning of life, death and everything in between but also raised a question in my head: how many Amongii are there in pi?</p>
+
+<p>The code consisted of a function converting the first million digits of pi (removing the “3.””) into binary then writing the binary output to a text file. Another function read from the file to search for the string “0111110011110101” or “1010111100111110”. This was quite easy but it led me to a much cooler discovery.</p>
+
+<h2 id="chudnovskys-algorithm">Chudnovsky’s Algorithm</h2>
+<p>Chudnovsky’s Algorithm was formulated by the Chudnovsky brothers in 1988 based on Ramanujan’s pi formulae and goddamn is it interesting. I’m no mathematician but I’ll attempt to explain it the best I can.</p>
+
+<p>So, using a generalized hypergeometric function: \(\begin{equation} _pF_q\left( \begin{array}{c} a_1, a_2, \ldots, a_p \\ b_1, b_2, \ldots, b_q \end{array}; z \right) = \sum_{n=0}^{\infty} \frac{(a_1)_n (a_2)_n \cdots (a_p)_n}{(b_1)_n (b_2)_n \cdots (b_q)_n} \frac{z^n}{n!} \end{equation}\)
+The Chudnovsky algorithm uses the 9th Heegner number ($-163$) which is an integer which is divisible by no square number other than 1 and is part of a finite field of imaginary numbers as well as the $j$-function which is a function of a complex variable on the imaginary, positive-only plane (also known as the upper-half plane) of complex numbers to result in:</p>
+
+\[\pi = 426880 \sqrt{10005} \sum_{k=0}^{\infty} \frac{(6k)!(545140134k + 13591409)}{(3k)!(k!)^3(-262537412640768000)^k}\]
+
+<p>This is the Chudnovsky’s algorithm which probably works on a graphing calculator or on pen and paper but it needs some work to be applied on Rust. More on this later.</p>
+
+<h2 id="my-attempt">My Attempt</h2>
+<p>I’ve recently become enticed with Rust and its intricacies, almost unhealthily as well. It’s speed and simplicity paired with how readable it is. It’s like if you took C’s control, power and processing and took Python’s syntax and readability and created a love child. But forget that ramble real quick and let’s delve into writing Chudnovsky’s Algorithm in Rust.</p>
+
+<p>I mentioned prior that I’m no mathematician, so translating mathematical equations into code was a bit daunting. However, Rust’s made the process more manageable. In crafting this implementation, I began by initializing variables to accommodate the dynamic nature of Chudnovsky’s algorithm. Using the Float type from the rug library (a Rust library for large numbers), I could conduct precise calculations, ensuring accuracy even with an extensive number of decimal places.</p>
+
+<figure class="highlight"><pre><code class="language-rust" data-lang="rust"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">output</span><span class="p">(</span><span class="n">Giga</span><span class="s">""</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Chudnovsky’s algorithm constantly interates, each progressively searching the approximation of pi and two fundamental things that Rust achieved was accuracy and speed. Rust’s <code class="language-plaintext highlighter-rouge">Float</code> ensures that every operation maintains point-bit precision up to 64 bits.</p>
+
+<p>To enhance utility, this thing runs on CLI using <code class="language-plaintext highlighter-rouge">env</code>, allowing to specify the desired precision and number of iterations as straightforward command line arguments. Moreover, basic error handling exists, ensuring that a user can’t shoot themselves in the foot.</p>
+
+<h2 id="future-stuff">Future Stuff</h2>
+<p>One glaring issue was the concession I made with the average reading. While this probably could’ve been easily fixed by writing each value to an array of 10, time constraints (and severe procrastination) hampered it. It probably could’ve been added in 10 mins with an extra 10 minutes just for testing.</p>
+
+<p>Lightgates are also usually upright but this one’s upside down. Lab-grade lightgates use invisible lasers to calculate when and how fast an object breaks or shortens a laser’s length so an analog sensor is caveman technology compared to a lab-grade lightgate.</p>
+
+<p>Another problem is how the timer was counted. If I were creating this in a non-Arduino environment, my first instinct would’ve been using difference in Unix time but I found as I found a solution in the Timer module, which is way easier than Unix time difference. Timer isn’t super efficient though, with a few tests showing different values for the same delay time but I guess 5 decimal places don’t really matter.</p>
+
+<h2 id="links">Links</h2>
+<ul>
+  <li><strong><a href="https://github.com/nail-e/arduino-lightgate">Github Page</a></strong></li>
+  <li><strong><a href="https://github.com/nail-e/arduino-lightgate/tree/main/Gallery">Project Gallery</a></strong></li>
+</ul>
+
+:ET
