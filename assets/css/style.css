@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,500,600,700');
 :root {
-    --bg-color: #fafafa;
-    --bg-hover-color: #ececec;
-    --body-bg: #fff;
-    --primary-font-color: #000;
-    --border-color: #dadada;
+  --bg-color: #282828;
+  --bg-hover-color:#665c54;
+  --body-bg: #1d2021;
+  --primary-font-color: #ebdbb2;
+  --border-color: #928374;
 }
 
 [data-theme="dark"] {
