@@ -1,36 +1,23 @@
 ---
-title: "Creating an Arduino-Powered Lightgate"
-date: 2023-04-13T00:00:00+00:00
+title: "In search of Amongi using Rust and Chudnovsky's Algorithm"
+date: 2023-10-13T00:00:00+00:00
 author: Elian Rieza
 layout: post
-permalink: /creating-an-arduino-powered-lightgate/
-categories: Hardware
-tags: [arduino, physics, hardware]
+permalink: /in-search-of-amongi-using-rust-and-chudnovskys-algorithm/
+categories: Software
+tags: [software, math, coding, rust]
 ---
-A high-school project never really warrants any extra brainpower required, especially if it's ungraded and for competition but the time constraints and team pressure makes an absolutely great learning experience. Last month, my IB school decided to run a Group 4 project day(s) and well, other than the redundancy of an optional, 6-hour project stretched out to two days, the Arduino project went well for our group.
-
-The prompt for the project was to create systems for a city on Mars and our group came up with a transportation system that would speed through Martian planes in a hyperloop-esque system. As the "Computer Scientist" and "Physicist" of the group, I was tasked with creating a monitoring system for the hyperloop speeds and thus came the idea of creating a lightgate.
+Pi has always been 3.14159 to me and to everyone else really, it's only nerds who'd want to know pi up to its 100th or 1000th digit while its your supernerds who'd be searching for pi up to the millionth digit and well, I'm a supernerd (when I want to).
 
 <img src="/assets/images/lightgate-post/real.jpg" alt="Arduino Lightgate" title="Lightgate" style="width:500px; height:300px; margin-right:20px; float: left;">
 
-A lightgate usually comes in pairs and is hooked up to a datalogger to either read the speed, velocity, acceleration or time between passing lightgates. To register a lightgate reading, the lightgate's light sensor reading would usually deviate enough to suggest that an object has passed through the lightgate. Standard stuff.
+So I was bored one summers day and way too done with the monotony of math and physics revision and opened up YouTube and the first video that piqued my interest was Stand-Up Math's legendary video of finding Among Us in Pi. This Einsteinian ingenuity of a video warrants its own place in the annals of history for finding the meaning of life, death and everything in between but also raised a question in my head: how many Amongii are there in pi?
 
-The project required calculating the speed of a train through the model tunnel, so fortunately for me, only one light sensor's reading is required (thankfully). The KY-018 photoresistor module acts as the lightgate's sensor. An LCD display also outputs the speed of the object passing through the tunnel.
+The code consisted of a function converting the first million digits of pi (removing the "3."") into binary then writing the binary output to a text file. Another function read from the file to search for the string "0111110011110101" or "1010111100111110". This was quite easy but it led me to a much cooler discovery.
 
-I attached the photoresistor to the two female-to-male connectors so that the photoresistor sensor head could be placed in a cardboard tube in the model.
+\[ \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \]
 
-
-It seemed appropriate for female-to-male connectors could be used on the LEDs to allow it to be connected on the top of the cardboard tube for easier viewing (and also a more polished model).
-
-<img src="/assets/images/lightgate-post/FTM2.jpg" alt="Arduino Lightgate" title="Lightgate" style="width:500px; height:300px; float: right; margin-left:20px">
-
-In the end, I sided with it as I was planning to exhibit the model headless and my group really didn't want to lug around a behemoth of a gaming laptop just for this one exhibition.
-
-The code for the board should first check the average reading of the first 10 readings to get the mean reading of the brightness. This allows for any negative deviations to register as the lightgate being used. As one photoresistor is attached, the length of the object planned to pass through the lightgate must be declared (in <span class="unit">km ⋅ h</span> <sup class="superscript">-1</sup> ) to get an accurate speed reading so as the photoresistor's digital value gets lower than a certain average threshold, a digital timer will start to calculate the time taken for the object to pass then the value is converted into hours. After this, the final value should be displayed on the LCD.
-
-This is when I realized that I was missing a potentiometer. I couldn't find one in time so I decided to output the speed calculations on the computer instead and only use the LCD as a proof-of-concept. But all-in-all, writing the software for it was a breeze. The timer module for Arduino is an absolute godsend, using only two functions to be able to calculate time taken. I highly recommend it for anyone needing a timer function for Arduino. 
-
-{% highlight c %}
+{% highlight rust %}
 // This code comes from GitHub page
 #include <LiquidCrystal.h> 
 
@@ -81,6 +68,16 @@ void loop() {
 } 
 
 {% endhighlight %}
+
+
+<img src="/assets/images/lightgate-post/FTM2.jpg" alt="Arduino Lightgate" title="Lightgate" style="width:500px; height:300px; float: right; margin-left:20px">
+
+In the end, I sided with it as I was planning to exhibit the model headless and my group really didn't want to lug around a behemoth of a gaming laptop just for this one exhibition.
+
+The code for the board should first check the average reading of the first 10 readings to get the mean reading of the brightness. This allows for any negative deviations to register as the lightgate being used. As one photoresistor is attached, the length of the object planned to pass through the lightgate must be declared (in <span class="unit">km ⋅ h</span> <sup class="superscript">-1</sup> ) to get an accurate speed reading so as the photoresistor's digital value gets lower than a certain average threshold, a digital timer will start to calculate the time taken for the object to pass then the value is converted into hours. After this, the final value should be displayed on the LCD.
+
+This is when I realized that I was missing a potentiometer. I couldn't find one in time so I decided to output the speed calculations on the computer instead and only use the LCD as a proof-of-concept. But all-in-all, writing the software for it was a breeze. The timer module for Arduino is an absolute godsend, using only two functions to be able to calculate time taken. I highly recommend it for anyone needing a timer function for Arduino. 
+
 
 ## Future Stuff 
 One glaring issue was the concession I made with the average reading. While this probably could've been easily fixed by writing each value to an array of 10, time constraints (and severe procrastination) hampered it. It probably could've been added in 10 mins with an extra 10 minutes just for testing.

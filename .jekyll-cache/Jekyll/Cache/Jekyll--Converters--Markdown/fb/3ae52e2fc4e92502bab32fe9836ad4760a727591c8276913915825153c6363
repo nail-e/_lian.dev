@@ -1,84 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-US" data-theme="dark">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Creating an Arduino-Powered Lightgate - nail.e's Hacker Handbook</title>
-		<meta name="description" content="nail.e's Hacker Handbook ">
-		<meta name="keywords" content="arduinophysicshardware">
-		<base href="http://localhost:4000" />
-		
-    	<meta content="2023-04-13T04:00:00+04:00" property="article:published_time">
-    	<meta content="http://localhost:4000/about/" property="article:author">
-  		
-		<meta property="og:site_name" content="nail.e's Hacker Handbook">
-		<meta property="og:type" content="article" />
-		<meta property="og:url" content="http://localhost:4000/creating-an-arduino-powered-lightgate/"/>
-		<meta property="og:title" content="Creating an Arduino-Powered Lightgate - nail.e's Hacker Handbook" />
-		<meta property="og:description" content="nail.e's Hacker Handbook " />
-		<meta property="og:image" content="http://localhost:4000/assets/images/favicon.png"/>
-		<meta name="twitter:card" content="summary"/>
-		<meta property="twitter:title" content="Creating an Arduino-Powered Lightgate - nail.e's Hacker Handbook" />
-		<meta property="twitter:description" content="nail.e's Hacker Handbook " />
-		<meta property="twitter:image" content="http://localhost:4000/assets/images/favicon.png" />
-		<link rel="stylesheet" href="assets/css/highlight.css">
-		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="shortcut icon" href="assets/images/favicon.png" />
-		<link rel="alternate" type="application/atom+xml" title="nail.e's Hacker Handbook" href="http://localhost:4000/atom.xml">
-		<link rel="alternate" type="application/json" title="nail.e's Hacker Handbook" href="http://localhost:4000/feed.json" />
-		<link rel="sitemap" type="application/xml" title="sitemap" href="http://localhost:4000/sitemap.xml" />
-		<meta name="google-site-verification" content="XXX" />
-	</head>
-<body>
-
-<div class="container">
-	<div class="profile">
-		<a href="http://localhost:4000"><img src="assets/images/profile.jpg" class="profile-image"></a>
-		<div class="profile-about">
-			<h1 style="margin-bottom: 0; font-weight: 700;">nail.e's Hacker Handbook</h2>
-			
-			
-				<a href="https://github.com/nail-e" target="_blank"><img src="assets/images/icon/github.svg" class="social-icon"></a>
-			
-			
-				<a href="https://linkedin.com/in/elian-r" target="_blank"><img src="assets/images/icon/linkedin.svg" class="social-icon"></a>
-			
-			<a href="about"><img src="assets/images/icon/me.svg" class="social-icon"></a>
-			<br>
-			aka Elian Rieza <br> High School Hobbyist <br> No.1 Wannabe Netrunner
-			<br>
-			<div id="mode-switcher" onclick="toggleNightMode();">
-				<span></span>
-			</div>
-		</div>
-	</div>
-	
-<div class="post-header">
-	<div class="post-date">13.04.2023</div>
-	<div class="post-share">
-		Share:&nbsp; 
-		<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/lightgate" target="_blank"><img src="assets/images/icon/facebook.svg" class="social-icon"></a>
-		<a href="https://twitter.com/intent/tweet?source=tweetbutton&amp;original_referer=http://localhost:4000/lightgate&amp;text=Creating an Arduino-Powered Lightgate - http://localhost:4000/lightgate" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
-		<a href="https://api.whatsapp.com/send?text=http://localhost:4000/lightgate" target="_blank"><img src="assets/images/icon/whatsapp.svg" class="social-icon"></a>
-	</div>
-</div>
-
-<div class="blog-post-content">
-	<h1>Creating an Arduino-Powered Lightgate</h1>
-	<p>A high-school project never really warrants any extra brainpower required, especially if it’s ungraded and for competition but the time constraints and team pressure makes an absolutely great learning experience. Last month, my IB school decided to run a Group 4 project day(s) and well, other than the redundancy of an optional, 6-hour project stretched out to two days, the Arduino project went well for our group.</p>
-
-<p>The prompt for the project was to create systems for a city on Mars and our group came up with a transportation system that would speed through Martian planes in a hyperloop-esque system. As the “Computer Scientist” and “Physicist” of the group, I was tasked with creating a monitoring system for the hyperloop speeds and thus came the idea of creating a lightgate.</p>
+I"�)<p>Pi has always been 3.14159 to me and to everyone else really, it’s only nerds who’d want to know pi up to its 100th or 1000th digit while its your supernerds who’d be searching for pi up to the millionth digit and well, I’m a supernerd (when I want to).</p>
 
 <p><img src="/assets/images/lightgate-post/real.jpg" alt="Arduino Lightgate" title="Lightgate" style="width:500px; height:300px; margin-right:20px; float: left;" /></p>
 
-<p>A lightgate usually comes in pairs and is hooked up to a datalogger to either read the speed, velocity, acceleration or time between passing lightgates. To register a lightgate reading, the lightgate’s light sensor reading would usually deviate enough to suggest that an object has passed through the lightgate. Standard stuff.</p>
+<p>So I was bored one summers day and way too done with the monotony of math and physics revision and opened up YouTube and the first video that piqued my interest was Stand-Up Math’s legendary video of finding Among Us in Pi. This Einsteinian ingenuity of a video warrants its own place in the annals of history for finding the meaning of life, death and everything in between but also raised a question in my head: how many Amongii are there in pi?</p>
 
-<p>The project required calculating the speed of a train through the model tunnel, so fortunately for me, only one light sensor’s reading is required (thankfully). The KY-018 photoresistor module acts as the lightgate’s sensor. An LCD display also outputs the speed of the object passing through the tunnel.</p>
-
-<p>I attached the photoresistor to the two female-to-male connectors so that the photoresistor sensor head could be placed in a cardboard tube in the model.</p>
-
-<p>It seemed appropriate for female-to-male connectors could be used on the LEDs to allow it to be connected on the top of the cardboard tube for easier viewing (and also a more polished model).</p>
+<p>The code consisted of a function converting the first million digits of pi (removing the “3.””) into binary then writing the binary output to a text file. Another function read from the file to search for the string “0111110011110101” or “1010111100111110”. This was quite easy but it led me to a much cooler discovery.</p>
 
 <p><img src="/assets/images/lightgate-post/FTM2.jpg" alt="Arduino Lightgate" title="Lightgate" style="width:500px; height:300px; float: right; margin-left:20px" /></p>
 
@@ -150,44 +76,4 @@
   <li><strong><a href="https://github.com/nail-e/arduino-lightgate/tree/main/Gallery">Project Gallery</a></strong></li>
 </ul>
 
-
-</div>
-<div class="tags-container">
-	
-		<a href="http://localhost:4000/tags/#arduino" class="post-tag">arduino</a>, 
-	
-		<a href="http://localhost:4000/tags/#physics" class="post-tag">physics</a>, 
-	
-		<a href="http://localhost:4000/tags/#hardware" class="post-tag">hardware</a>
-	
-</div>
-<div class="navigation">
-	
-		<a class="prev" href="/this-is-a-blog/">< This is a Blog</a>
-	 
-	<a class="next" href="/in-search-of-amongi-using-rust-and-chudnovskys-algorithm/">In search of Amongi using Rust and Chudnovsky's Algorithm ></a>
-
-</div>
-
-
-</div>
-	<script src="assets/js/ephesus.js"></script>
-	<script type="text/javascript">
-		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			document.getElementById('mode-switcher').classList.add('active');
-		}
-	</script>
-
-	
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-00"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-XXXXXXXX-00');
-    </script>
-	
-</body>
-</html>
+:ET
