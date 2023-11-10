@@ -26,7 +26,8 @@ author:
 
 
 # URL settings
-url: "nail-e.github.io/" # Domain Name of host. [username].github.io for github pages
+baseurl: /
+url: "http://nail-e.github.io/" # Domain Name of host. [username].github.io for github pages
 permalink: pretty
 
 markdown: kramdown
