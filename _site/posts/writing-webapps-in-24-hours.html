@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Apps are fun (or how I forced myself to love it by writing one in 24 hours) - nail_'s Hacker Handbook</title>
+    <link rel="shortcut icon" href="https://n-o-d-e.live/images/avatar.png">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css" media="screen">
+    <meta name="title" content="nail_ 's Hacker Handbook">
+    <meta name="description" content="nail_'s developer blog and landing page. ">
+    <meta name="keywords" content="Elian, Rieza, Elian Rieza, Elian Inigo Rieza, e-lian.dev, nail_, nail_'s Hacker Handbook, Hacking, Arduino, Hacker Handbook, Hardware Hacking, Math, Hardware, Hacking, Arduino Lightgate, Lightgate, Amongii, Amongi, Chudnovsky's Algorithm, Chudnovsky, three.js, nasa, NASA, NASA spaceapps, nasa spaceapps, moonquakes">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="author" content="Elian Rieza">
+</head>
+
+<body>
+    
+    <!--HEADER SECTION -->
+
+            <div id="header" class="header">
+                <div class="logodiv">
+                    <a href="index"><img class="logo" src="../resources/sun.png"" /></a>
+
+                    <div class="filter">
+                    <a href="../index">HOME</a>
+
+                    <span class="footdogs">  / </span>
+                    <a href="../blog">BLOG</a>
+
+                    <span class="footdogs">  / </span>
+                    <a href="../about">ABOUT</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        <div id="content">
+
+        <div id="page">
+
+            <!--CONTENT -->
+            
+            <div id="list">
+
+                <div class="title">
+                WEB APPS ARE FUN (OR HOW I FORCED MYSELF TO LOVE IT BY WRITING ONE IN 24 HOURS)<br>
+                --- <br>
+               13 // Apr // 2023 <br>
+                3 min
+                </div>
+
+                <div id="post">
+                  <p>Pi has always been 3.14159 to me and to everyone else really, it's only nerds who'd want to know pi up to its 100th or 1000th digit while its your supernerds who'd be searching for pi up to the millionth digit and well, I'm a supernerd (when I want to). <br>
+                  <br>
+                  So I was bored one summers day and way too done with the monotony of math and physics revision and opened up YouTube and the first video that piqued my interest was Stand-Up Math's legendary video of finding Among Us in Pi. This Einsteinian ingenuity of a video warrants its own place in the annals of history for finding the meaning of life, death and everything in between but also raised a question in my head: how many Amongii are there in pi?<br>
+                  <br>
+                There are 4 amongii in the first million digits of pi, with the crewmate facing both to the left and the right. It took around 21 milliseconds to calculate and it really didn't take that long. <br>
+      <br>
+                <p>The code consisted of a function converting the first million digits of pi (removing the "3."") into binary then writing the binary output to a text file. Another function read from the file to search for the string "0111110011110101" or "1010111100111110". This was quite easy but it led me to a much cooler discovery.</p>
+
+                <h3>Chudnovsky's Algorithm</h3>
+
+               <p>Chudnovsky's Algorithm was formulated by the Chudnovsky brothers in 1988 based on Ramanujan's pi formulae and goddamn is it interesting. I'm no mathematician but I'll attempt to explain it the best I can.<br>
+              <br>
+                So, using a generalized hypergeometric function:
+                <img src="./arduino-lightgate-resources/schematic.png" width="50%" height="50%">
+                
+                <p>The Chudnovsky algorithm uses the 9th Heegner number ($-163$) which is an integer which is divisible by no square number other than 1 and is part of a finite field of imaginary numbers as well as the $j$-function which is a function of a complex variable on the imaginary, positive-only plane (also known as the upper-half plane) of complex numbers to result in: </p>
+
+                <img src="./arduino-lightgate-resources/FTM.jpg" width="50%" height="50%">
+                <p class="subtitle">Photoresistor + Female-to-Male cables</p>
+
+                <p>This is the Chudnovsky's algorithm which probably works on a graphing calculator or on pen and paper but it needs some work to be applied on Rust. More on this later.</p>
+
+                <h3>My Attempt</h3>
+
+                <p>One glaring issue was the concession I made with the average reading. While this probably could've been easily fixed by writing each value to an array of 10, time constraints (and severe procrastination) hampered it. It probably could've been added in 10 mins with an extra 10 minutes just for testing. <br>
+                <br>
+Lightgates are also usually upright but this one's upside down. Lab-grade lightgates use invisible lasers to calculate when and how fast an object breaks or shortens a laser's length so an analog sensor is caveman technology compared to a lab-grade lightgate. <br>
+<br>
+Another problem is how the timer was counted. If I were creating this in a non-Arduino environment, my first instinct would've been using difference in Unix time but I found as I found a solution in the Timer module, which is way easier than Unix time difference. Timer isn't super efficient though, with a few tests showing different values for the same delay time but I guess 5 decimal places don't really matter. </p>
+
+                <img src="./arduino-lightgate-resources/real.jpg" width="50%" height="50%">
+                <p class="subtitle">The board on display (with a working LED + Photoresistor)</p>
+
+                <h3>Source Files</h3>
+                <a href="https://github.com/nail-e/arduino-lightgate">
+                        <span>Github Page</span>
+                    </a>
+
+
+                <p>---<br>
+                By nail_</p>
+
+
+                </div>
+
+
+            </div>
+            
+             
+
+                
+                </div>
+
+        </div>
+
+</body>
+</html>

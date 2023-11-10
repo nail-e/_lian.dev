@@ -4,13 +4,27 @@
  <title>nail.e's Hacker Handbook</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2023-11-10T17:18:27+04:00</updated>
+ <updated>2023-11-10T17:36:30+04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>nail.e's Hacker Handbook</name>
    <email>e.i_ri3za@tuta.io</email>
  </author>
 
+ 
+ <entry>
+   <title>This is a Blog</title>
+   <link href="http://localhost:4000/this-is-a-blog/"/>
+   <updated>2022-06-21T04:00:00+04:00</updated>
+   <id>http://localhost:4000/hello</id>
+   <content type="html">&lt;p&gt;Hello. I’m Elian, or nail-e, and this is my blog.&lt;/p&gt;
+
+&lt;p&gt;A blog to collect and share all my tech/nerd ideas was something I’ve always had in mind but couldn’t get around doing but finally, after months of deliberation and mental preperation, I finally got some HTML running, stripped and rewrote CSS, hacked stylesheets online and collated all my posts ideas on Obsidian to be uploaded here.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned :)&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Ephesus Jekyll Blog Theme</title>
