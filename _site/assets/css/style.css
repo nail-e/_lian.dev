@@ -9,11 +9,11 @@
 }
 
 [data-theme="dark"] {
-  --bg-color: #161f29;
-  --bg-hover-color:#36404c;
-  --body-bg: #10171e;
-  --primary-font-color: #bfbfbf;
-  --border-color: #6a6a6a;
+  --bg-color: #282828;
+  --bg-hover-color:#665c54;
+  --body-bg: #1d2021;
+  --primary-font-color: #ebdbb2;
+  --border-color: #928374;
 }
 
 body{
