@@ -1,99 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>e-lian.dev - Posts Tags</title>
-    <link rel="shortcut icon" href="https://n-o-d-e.live/images/avatar.png">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen">
-    <meta name="title" content="nail_ 's Hacker Handbook">
-    <meta name="description" content="nail_'s developer blog and landing page. ">
-    <meta name="keywords" content="Elian, Rieza, Elian Rieza, Elian Inigo Rieza, e-lian.dev, nail_, nail_'s Hacker Handbook, Hacking, Arduino, Hacker Handbook, Hardware Hacking, Math, Hardware, Hacking, Arduino Lightgate, Lightgate, Amongii, Amongi, Chudnovsky's Algorithm, Chudnovsky">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="3 days">
-    <meta name="author" content="Elian Rieza">
-</head>
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_words = site_tags | split:',' | sort %}
+<div class="w-100">
+	<h1>Tags in Blog</h1>
+	<div class="tags">
+		{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+		{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+			<a href="tags/#{{ this_word | cgi_escape }}" class="tag">{{ this_word }} <span>({{ site.tags[this_word].size }})</span></a>
+		{% endunless %}{% endfor %}
+	</div>
+</div>
+<div class="post-container">
+	{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+	{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+	<h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
 
-<body>
-    <!--HEADER SECTION -->
-
-            <div id="header" class="header">
-                <div class="logodiv">
-                    <a href="index"><img class="logo" src="resources/sun.png" /></a>
-
-                    <div class="filter">
-                    <a href="index">HOME</a>
-
-                    <span class="footdogs">  / </span>
-                    <a href="blogl">BLOG</a>
-
-                    <span class="footdogs">  / </span>
-                    <a href="about">ABOUT</a>
-
-                    </div>
-                </div>
-            </div>
-
-    
-    <div id="page">
-        <div id="content">
-
-
-            <!--THE LIST -->
-            
-            <div id="list">
-            
-            <ul>
-
-
-                <!--<li>-->
-                <!--    <a href="https://n-o-d-e.shop">-->
-                <!--        <span class="notification"><span>[!!]</span><span>FREE WORLDWIDE SHIPPING ON WATCHES (MAX 1 PER ORDER)</span></span>-->
-                <!--    </a>-->
-                <!--</li>-->
-
-                <a href="blog"><span class="tag">Go back to Blog Posts</span>
-
-                <li>
-                    <a href="tags-hdw">
-                        <span class="tag">[HDW]</span><span>Posts tagged Hardware</span>
-                    </a>
-                </li>
-
-		<li>
-                    <a href="tags-sfw">
-                        <span class="tag">[SFW]</span><span>Posts tagged Software and Coding</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="tags-sec">
-                        <span class="tag">[SEC]</span><span>Posts tagged Cybersecurity<span></span>
-                    </a>
-                </li>
-
-		<li>
-                    <a href="tags-lin">
-                        <span class="tag">[LIN]</span><span>Posts tagged Linux</span>
-                    </a>
-                </li>
-
-		<li>
-                    <a href="tags-lin">
-                        <span class="tag">[SKL]</span><span>Posts tagged Academics</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="tags-ran">
-                        <span class="tag">[RAN]</span><span>Posts tagged Random</span>
-                    </a>
-                </li>
-
-
-            </ul>
-            </div>
-            
-
-</body>
-</html>
+	{% for post in site.tags[this_word] %}{% if post.title != null %}
+	    <div class="post-list">
+            <a class="post-title" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date: "%d.%m.%Y" }}</time>
+        </div>
+	{% endif %}{% endfor %}
+	{% endunless %}{% endfor %}
+</div>
