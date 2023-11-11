@@ -1,6 +1,6 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "nail.e&apos;s Hacker Handbook",
+    "title": "The Silence of the RAM",
     "home_page_url": "http://localhost:4000/",
     "feed_url": "http://localhost:4000/feed.json",
     "description": "nail.e's Hacker Handbook ",
@@ -9,7 +9,7 @@
     "expired": false,
     
     "author":  {
-        "name": "nail.e's Hacker Handbook",
+        "name": "The Silence of the RAM",
         "url": null,
         "avatar": null
     },

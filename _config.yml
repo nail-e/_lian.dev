@@ -1,6 +1,6 @@
 # Site settings
-site: nail.e's Hacker Hanbook
-title: nail.e's Hacker Handbook
+site: The Silence of the RAM
+title: The Silence of the RAM
 keywords: nail.e, blog, Elian Inigo Rieza,
 description: >-
   nail.e's Hacker Handbook 
@@ -13,9 +13,9 @@ google_analytics:   UA-XXXXXXXX-00 # Put your Google Analytics code
 
 # Author settings
 author: 
-  name: nail.e's Hacker Handbook
-  bio: aka Elian Rieza <br> High School Hobbyist <br> No.1 Wannabe Netrunner 
-  picture: assets/images/profile.jpg 
+  name: The Silence of the RAM
+  bio: A blog by Elian Rieza // nail-e <br> High School Hobbyist <br> No.1 Wannabe Netrunner 
+  picture: assets/images/profile.webp 
   github: nail-e # github username
   twitter: # twitter username
   facebook: # facebook username

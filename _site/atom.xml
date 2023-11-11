@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>nail.e's Hacker Handbook</title>
+ <title>The Silence of the RAM</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2023-11-11T00:10:45+04:00</updated>
+ <updated>2023-11-11T09:40:48+04:00</updated>
  <id>http://localhost:4000</id>
  <author>
-   <name>nail.e's Hacker Handbook</name>
+   <name>The Silence of the RAM</name>
    <email>e.i_ri3za@tuta.io</email>
  </author>
 
